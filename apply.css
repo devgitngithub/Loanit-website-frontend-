@@ -1,0 +1,324 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+/* ===== LAYOUT WRAPPER ===== */
+.application-wrapper {
+    max-width: 1150px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+/* ===== LEFT PANEL ===== */
+.left-panel {
+    background: linear-gradient(135deg, #5b3df5, #7c4dff);
+    color: white;
+    padding: 70px 50px;
+}
+
+.left-panel h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.left-panel p {
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.left-panel ul {
+    list-style: none;
+}
+
+.left-panel ul li {
+    margin-bottom: 18px;
+}
+
+/* ===== RIGHT PANEL ===== */
+.right-panel {
+    background: white;
+    padding: 60px;
+}
+
+.right-panel h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+
+
+/* ===== PROGRESS STEPS ===== */
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.step .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.step.active {
+    color: #5b3df5;
+}
+
+.step.active .circle {
+    background: linear-gradient(135deg, #5b3df5, #7c4dff);
+    color: white;
+}
+
+/* ===== FORM GRID ===== */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.required {
+    color: red;
+}
+
+.form-group input {
+    padding: 13px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #5b3df5;
+}
+
+/* ===== RADIO GROUP ===== */
+.radio-group {
+    display: flex;
+    gap: 30px;
+    margin-top: 8px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #5b3df5;
+}
+
+/* ===== BUTTON ===== */
+.next-btn {
+    grid-column: span 2;
+    margin-top: 40px;
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(135deg, #5b3df5, #7c4dff);
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(91,61,245,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+    .application-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel {
+        display: none;
+    }
+
+    .right-panel {
+        padding: 40px 30px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    .next-btn {
+        grid-column: span 1;
+    }
+}
+/* ===== TOP NAV ===== */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+/* PREMIUM BACK BUTTON */
+
+.back-home-btn {
+    position: fixed;
+    top: 25px;
+    left: 35px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+    color: #5b3df5;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(91, 61, 245, 0.2);
+
+    box-shadow: 
+        0 8px 25px rgba(91, 61, 245, 0.15),
+        0 2px 5px rgba(0,0,0,0.05);
+
+    transition: all 0.35s ease;
+    z-index: 1000;
+}
+
+.back-home-btn:hover {
+    background: linear-gradient(135deg, #5b3df5, #7b5cff);
+    color: white;
+
+    box-shadow: 
+        0 12px 35px rgba(91, 61, 245, 0.4);
+
+    transform: translateY(-3px) scale(1.03);
+}
+
+#whatsappField {
+    display: none;
+}
+/* ===== FLOATING BACK BUTTON ===== */
+.floating-back {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    z-index: 1000;
+}
+
+/* Glass Button */
+ .back-home-btn {
+    text-decoration: none;
+    padding: 12px 26px;
+    border-radius: 60px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5b3df5;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
+} 
+
+/* Hover Effect */
+ .back-home-btn:hover {
+    background: linear-gradient(135deg, #5b3df5, #7c4dff);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(91,61,245,0.4);
+} 
+/* ===== SECTION TITLE ===== */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+}
+
+/* ===== EDUCATION SECTION ===== */
+.education-section {
+    display: none;
+    margin-top: 30px;
+}
+
+/* Select styling */
+select {
+    padding: 13px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    width: 100%;
+}
+
+select:focus {
+    outline: none;
+    border-color: #5b3df5;
+}
+
+small {
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+}
